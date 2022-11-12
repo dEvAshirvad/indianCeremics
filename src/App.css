@@ -1,0 +1,337 @@
+.App {
+    position: relative;
+}
+
+/* Header */
+header {
+    padding: 50px 0;
+    top: 0;
+    position: sticky;
+    background: rgba(245, 245, 245, 0.6);
+    backdrop-filter: blur(6px);
+    margin-bottom: 6rem;
+}
+
+nav {
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navh1 {
+    font-size: 3.2rem;
+}
+
+.navMenus, .navCommands {
+    align-items: center;
+    gap: 3rem;
+}
+
+.navMenus {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+/* Home */
+
+    /* Hero */
+    .hero .flexy {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .heroDetail {
+        width: 55%;
+    }
+
+    .heroBanner {
+        width: 500px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50% 50% 0 0;
+        background-color: gray;
+        border: 5px solid black;
+    }
+
+    /* StorySection */
+
+    .bigBanner {
+        width: 100%;
+        background-color: gray;
+    }
+
+    .storyBanner {
+        min-height: 50rem;
+        margin-bottom: 5rem;
+    }
+
+    .storyDetails {
+        padding: 11rem;
+    }
+
+    .Pic {
+        width: 100%;
+        max-width: 550px;
+        min-height: 600px;
+        background-color: gray;
+    }
+
+    /* QuoteSection */
+
+    .QuoteSection .flexy {
+        flex-direction: column;
+        gap: 8rem;
+        align-items: center;
+    }
+
+    .QuoteSection h1 {
+        text-align: center;
+    }
+
+    .QuoteSection hr {
+        width: 500px;
+    }
+
+    /* Featured Work */
+
+    .FeaturedDetails {
+        padding: 11rem;
+        padding-right: 0;
+    }
+
+    /* FeaturedProduct */
+
+    .FeaturedProduct h2 {
+        margin-bottom: 3rem;
+    }
+
+    /* Footer */
+
+    footer {
+        padding: 7rem 0;
+        background-color: black;
+        color: white;
+    }
+
+    .fooLogo {
+        position: relative;
+        top: -1.8rem;
+    }
+
+    .upperFooter {
+        justify-content: space-between;
+    }
+
+    .address h3 {
+        margin-bottom: 2rem;
+    }
+
+    .address {
+        margin-bottom: 4rem;
+    }
+
+    .email > a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .bottomFooter {
+        margin-top: 8rem;
+        justify-content: space-between;
+    }
+
+    .bottomFooter span {
+        gap: 3rem;
+        align-items: center;
+    }
+
+/* collectionsPage */
+
+.collectionsPage nav {
+    justify-content: flex-end;
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
+.collectionsPage nav span {
+    align-items: center;
+    gap: 1rem;
+}
+
+.pageHead {
+    margin-bottom: 6rem;
+}
+
+.pageHead h1 {
+    margin-bottom: 3rem;
+}
+
+.pageHead hr {
+    width: 40%;
+}
+
+    /* CollectionGrid */
+
+    .productgrid {
+        justify-content: space-between;
+    }
+
+    .asideMenus {
+        padding-right: 20rem;
+    }
+
+    .productBlock h3 {
+        font-family: 'silk';
+    }
+
+    .productBlock h4 {
+        font-weight: 500;
+    }
+    
+    .productPic {
+        width: 31rem;
+        aspect-ratio: 1 / 1;
+        background-color: gray;
+    }
+
+    .productDetails {
+        margin-top: 3rem;
+        justify-content: space-between;
+    }
+
+    .productDetails span {
+        position: relative;
+        top: -1.2rem;
+    }
+
+    .productDetails h3 {
+        margin-bottom: .5rem;
+    }
+
+    .gridContainer {
+        width: 100%;
+        max-width: calc(3*33rem);
+        justify-content: space-between;
+        row-gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+/* Single Product */
+
+    .singleDetails {
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 11rem;
+    }
+
+    .singleDetails h3 {
+        font-family: 'silk';
+    }
+
+    .sinPic {
+        min-width: 55rem;
+        aspect-ratio: 1 / 1;
+        background-color: gray;
+    }
+
+    .qty {
+        min-height: 4rem;
+        position: relative;
+
+        top: 1.8px;
+        margin-left: 6rem;
+    }
+
+    .qty button, .qty h3 {
+        min-width: 4rem;
+        aspect-ratio: 1 / 1;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .qty h3 {
+        position: relative;
+        top: -1.8px;
+    }
+
+    .singleDetails span, .qty {
+        align-items: center;
+    }
+
+    .ctagrp {
+        margin-top: 4rem;
+        align-items: center ;
+        gap: 6rem;
+    }
+
+
+/* Checkout Page */
+
+.CheckoutPage nav span {
+    align-items: center;
+    gap: 4rem;
+}
+
+.CheckoutPage nav span h3 {
+    position: relative;
+    font-size: 1.8rem;
+    bottom: 4.5px;
+    align-self: flex-end;
+}
+
+.CheckoutPage nav span h2 {
+    font-size: 3rem;
+}
+
+.checoutblock {
+    padding: 4rem 0;
+}
+
+.pPic {
+    width: 25rem;
+    aspect-ratio: 1 / 1;
+    background-color: gray;
+}
+
+.checkDetails .qty {
+    margin: 0;
+}
+
+.checkDetails {
+    padding: 1rem;
+    padding-left: 6rem;
+    padding-right: 0;
+    width: 80%;
+    height: 25rem;
+    justify-content: space-between;
+}
+
+.checkoutContainer {
+    padding: 6rem 0;
+    flex-direction: column;
+}
+
+.checoutblock {
+    border-top:  2px solid black;
+}
+
+.checkFlex1 {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.checkFlex2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.cross {
+    position: relative;
+    margin: 1.5rem;
+    top: 25px;
+}

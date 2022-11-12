@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+@font-face {
+  font-family: 'silk';
+  src: url(/src/assets/fonts/SilkSerif-Light.ttf);
+}
+@font-face {
+  font-family: 'silk';
+  font-style: italic;
+  src: url(/src/assets/fonts/SilkSerif-LightItalic.ttf);
+}
+@font-face {
+  font-family: 'silk';
+  font-weight: bold;
+  src: url(/src/assets/fonts/SilkSerif-Medium.ttf);
+}
+@font-face {
+  font-family: 'silk';
+  font-weight: bold;
+  font-style: italic;
+  src: url(/src/assets/fonts/SilkSerif-Italic.ttf);
+}
+
+:root {
+  font-size: 62.5%;
+
+  --font-h1 : 6.4rem;
+  --font-h2 : 4.8rem;
+  --font-18 : 1.8rem;
+  --font-prime : 1.6rem;
+
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Montserrat';
+}
+
+body {
+  font-size: 1.8rem;
+  background-color: whitesmoke;
+}
+
+h1, h2, h1 span, h2 span {
+  font-family: 'silk';
+}
+
+h1 {
+  font-size: 6.0rem;
+}
+
+h1 span {
+  font-style: italic;
+}
+
+h2 {
+  font-size: 4.8rem;
+}
+
+h2 span {
+  font-style: italic;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+.flexy {
+  display: flex;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+ul, li, a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+p {
+  line-height: 2.2rem;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+button.prime {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 13px 23px;
+  border: 2px solid black;
+}
+
+section {
+  margin-bottom: 10rem;
+}
+
+.sectionDetails h1 {
+  margin-bottom: 2rem;
+}
+
+.sectionDetails h2 {
+  margin-bottom: 1rem;
+}
+
+.sectionDetails p {
+  width: 80%;
+  margin-bottom: 4rem;
+}
+
+.gridBlock .flexy {
+  align-items: center;
+  gap: 2rem;
+}
+
+.block {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: gray;
+}
