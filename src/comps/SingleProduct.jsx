@@ -1,32 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useProduct } from '../contexts/ProductContext';
 
 function SingleProduct() {
 
     const prams = useParams();
-    const { ProductList } = useProduct();
-
-    const [Product, setProduct] = useState();
-    const [Load, setLoad] = useState(true)
-
-    useEffect(() => {
-      const prod = ProductList.find(element => element.metaLink === prams.id)
-      setProduct(prod)
-      setLoad(false)
-    }, [])
+    const { state : { product, cart }, dispatch } = useProduct();
+    const prod = product.find(element => element.id === prams.id)
     
 
   return (
-    !Load &&
     <section className='SingleProduct'>
         <div className="container flexy">
             <div className="sinPic"></div>
             <div className="singleDetails flexy sectionDetails">
-                <h1>{Product.name}</h1>
-                <p>{Product.description}</p>
+                <h1>{prod.name}</h1>
+                <p>{prod.description}</p>
                 <span className='flexy'>
-                    <h3>Rs {Product.price}</h3>
+                    <h3>Rs {prod.price}</h3>
                     <div className="qty flexy">
                         <button>
                             <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +38,14 @@ function SingleProduct() {
                 </span>
                 <div className="flexy ctagrp">
                     <div className="cta">
-                        <a href=""><button className="prime">Shop Now</button></a>
+                        <a><button disabled={cart.some((element) => {
+                            return element.id === prod.id
+                        })} onClick={() => {
+                            dispatch({
+                                type : "ADD_TO_CART",
+                                payload : {...prod}
+                            })
+                        }} className="prime">Shop Now</button></a>
                     </div>
                     <Link className='wishlistLink'>
                         <svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">

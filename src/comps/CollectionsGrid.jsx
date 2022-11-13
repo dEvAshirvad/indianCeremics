@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 
 function CollectionsGrid() {
 
-    const { ProductList, AddCheckout, Checkout } = useProduct()
-    const db = ProductList
+    const { state : { product }, dispatch } = useProduct();
+
+    console.log(product)
 
     function handleCheckout(element) {
-        AddCheckout(element)
-        console.log(Checkout)
+
     }
 
   return (
@@ -19,7 +19,7 @@ function CollectionsGrid() {
                 <span className='flexy'>
                     <p>Filter</p>
                     <svg width="15" height="15" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7254 1.72461L20.4754 17.1263V29.174L13.4107 31.7246V17.1263L1.72543 1.72461H31.7254Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path fillRule="evenodd" clipRule="evenodd" d="M31.7254 1.72461L20.4754 17.1263V29.174L13.4107 31.7246V17.1263L1.72543 1.72461H31.7254Z" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                 </span>
                 <span className='flexy'>
@@ -43,10 +43,10 @@ function CollectionsGrid() {
                 </aside>
                 <div className="gridContainer flexy">
                     {
-                        db.map((element) => {
+                        product.map((element) => {
                             return (
                                 <div className="productBlock" key={element.id}>
-                                    <Link to={'/collections/'+element.metaLink}>
+                                    <Link to={'/collections/'+element.id}>
                                         <div className="productPic"></div>
                                     </Link>
                                     <div className="productDetails flexy">

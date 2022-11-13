@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+src/firebaseInit.jsx
+.firebaserc
+firebase.json
