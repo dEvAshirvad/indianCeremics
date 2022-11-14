@@ -5,8 +5,9 @@ import { useProduct } from '../contexts/ProductContext';
 function SingleProduct() {
 
     const prams = useParams();
-    const { state : { product, cart }, dispatch } = useProduct();
-    const prod = product.find(element => element.id === prams.id)
+    const { state , dispatch } = useProduct();
+    const prod = state.product.find(element => element.id === prams.id);
+    const cartProd = state.cart.find(element => element.id === prams.id);
     
 
   return (
@@ -19,13 +20,27 @@ function SingleProduct() {
                 <span className='flexy'>
                     <h3>Rs {prod.price}</h3>
                     <div className="qty flexy">
-                        <button>
+                        <button onClick={() => {
+                            dispatch({
+                                type: "DECREMENT_QTY",
+                                payload: {
+                                    id: prams.id,
+                                }
+                            })
+                        }}>
                             <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 2V0H15V2H0Z" fill="black"/>
                             </svg>
                         </button>
-                        <h3>1</h3>
-                        <button>
+                        <h3>{(cartProd) ? cartProd.qty : 1}</h3>
+                        <button onClick={() => {
+                            dispatch({
+                                type: "ADD_QTY",
+                                payload: {
+                                    id: prams.id,
+                                }
+                            })
+                        }}>
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.4375 8.22584V14.0323H6.5625V8.22584H0.9375V6.29035H6.5625V0.967773H8.4375V6.29035H14.0625V8.22584H8.4375Z" fill="black"/>
                                 <ellipse cx="7.5" cy="0.967742" rx="0.9375" ry="0.967742" fill="black"/>
@@ -38,14 +53,12 @@ function SingleProduct() {
                 </span>
                 <div className="flexy ctagrp">
                     <div className="cta">
-                        <a><button disabled={cart.some((element) => {
-                            return element.id === prod.id
-                        })} onClick={() => {
+                        <a><button onClick={() => {
                             dispatch({
                                 type : "ADD_TO_CART",
                                 payload : {...prod}
                             })
-                        }} className="prime">Shop Now</button></a>
+                        }} className="prime">{(cartProd) ? "Added" : "Shop Now"}</button></a>
                     </div>
                     <Link className='wishlistLink'>
                         <svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">

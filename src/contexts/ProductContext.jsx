@@ -15,7 +15,8 @@ function ProductContext({ children }) {
 
     const [state, dispatch] = useReducer(productReducer, {
         product : [],
-        cart : []
+        cart : [],
+        qty : 0
     })
 
     const [Loading, setLoading] = useState(true)
